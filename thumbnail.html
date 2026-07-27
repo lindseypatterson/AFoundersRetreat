@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="styles.css" />
+<style>
+  html,body{margin:0;height:100%}
+  .tile{display:flex;width:1280px;height:854px;font-family:var(--font-script)}
+  .main{flex:1;background:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px}
+  .name{font-family:var(--font-script);color:var(--paper-2);font-size:150px;line-height:.92;text-align:center;padding:0 60px}
+  .tag{font-family:var(--font-sans);color:var(--sand);font-size:30px;letter-spacing:.28em;text-transform:uppercase}
+  .strip{width:150px;display:flex;flex-direction:column}
+  .strip div{flex:1}
+</style>
+</head>
+<body>
+<div class="tile">
+  <div class="main">
+    <div class="name">Founders Retreat</div>
+    <div class="tag">A women&rsquo;s business retreat</div>
+  </div>
+  <div class="strip">
+    <div style="background:var(--sand)"></div>
+    <div style="background:var(--olive)"></div>
+    <div style="background:var(--teal)"></div>
+    <div style="background:var(--terracotta)"></div>
+  </div>
+</div>
+</body>
+</html>
