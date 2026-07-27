@@ -1,0 +1,38 @@
+<!-- @dsCard group="Components" viewport="700x430" name="Forms" subtitle="Editorial underline inputs, selects & checkboxes" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="../../styles.css" />
+<style>
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font-sans); }
+  .wrap { padding: 30px 34px; display: grid; grid-template-columns: 1fr 1fr; gap: 26px 34px; }
+</style>
+</head>
+<body>
+<div id="root" class="wrap"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script type="text/babel">
+const { Input, Select, Checkbox } = window.TheFoundersEditDesignSystem_0cfd4a;
+function Demo() {
+  return (
+    <>
+      <Input label="Full name" placeholder="Ada Lovelace" />
+      <Input label="Email" type="email" variant="box" placeholder="you@studio.com" />
+      <Select label="Which retreat?" options={['Coastal — May', 'Tuscany — Sept', 'High Desert — Nov']} />
+      <Input label="Company" variant="box" hint="Optional" placeholder="Your studio" />
+      <div style={{gridColumn:'1 / -1', display:'flex', flexDirection:'column', gap:14, borderTop:'1px solid var(--border-muted)', paddingTop:18}}>
+        <Checkbox label="Add me to the seasonal journal" defaultChecked />
+        <Checkbox label="I understand deposits are non-refundable" />
+      </div>
+    </>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+</script>
+</body>
+</html>
