@@ -1,0 +1,50 @@
+<!-- @dsCard group="Components" viewport="700x560" name="Content" subtitle="Section headings, image cards, blog rows, stats & FAQ" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="../../styles.css" />
+<style>
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font-sans); }
+  .wrap { padding: 30px 34px; display: flex; flex-direction: column; gap: 30px; }
+  .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+  .stats { display: flex; gap: 48px; }
+</style>
+</head>
+<body>
+<div id="root" class="wrap"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script type="text/babel">
+const { SectionHeading, Card, BlogCard, Stat, Accordion } = window.TheFoundersEditDesignSystem_0cfd4a;
+const P = '../../assets/photos/';
+function Demo() {
+  return (
+    <>
+      <SectionHeading eyebrow="The Retreat" title="Ten slow days to build" lede="An unhurried offsite for women founders." />
+      <div className="cards">
+        <Card image={P+'beach-yoga.webp'} tag="Wellness" tagTone="teal" title="Move at the water's edge" href="#" linkLabel="Read the guide">Sunrise flows on the sand before the workday begins.</Card>
+        <div>
+          <BlogCard image={P+'journaling-candles.png'} title="What to pack" excerpt="A carry-on list for ten slow days." date="Jun 21" href="#" />
+          <BlogCard image={P+'courtyard-table.webp'} title="Long-table dinners" excerpt="How we cook together each night." date="Jun 14" href="#" />
+        </div>
+      </div>
+      <div className="stats">
+        <Stat value="10" label="Days off-grid" tone="terracotta" />
+        <Stat value="18" label="Women per cohort" tone="teal" />
+        <Stat value="3" label="Coastal cities" tone="olive" />
+      </div>
+      <Accordion items={[
+        {q:'Who is it for?', a:'Women founders in roughly their first five years of building something.'},
+        {q:'What is included?', a:'Lodging, all meals, workshops, and daily movement — everything but your flights.'},
+      ]} />
+    </>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+</script>
+</body>
+</html>
